@@ -18,7 +18,10 @@ app.get('/', function (req, res) {
 
 app.post('/api/fileanalyze', upload.single("upfile"), function(req, res){
   res.json({
-    greetings: req.file.fieldName
+    name: req.file.originalname,
+    type: req.file.mimetype,
+    size: req.file.size + " bytes"
+    
   });
 });
 
